@@ -1,4 +1,4 @@
-## Update on how to configure the taiilwindcss
+## Update on how to configure the tailwindcss
 
 Install Tailwindss
 ![image](https://github.com/LancemDev/for-pyrowatch/assets/74910038/335f1abd-1e05-479d-9985-4ffd38d02134)
