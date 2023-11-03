@@ -81,7 +81,7 @@
 
         <!-- Área de contenido principal -->
         <div class="flex-1 p-4">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1t32nmcDe5osdjvhsT2P6162xKlkfjCU&ehbc=2E312F" width="640" height="480"></iframe>
+            <iframe src="https://gspace.maps.arcgis.com/apps/dashboards/0cdfd2578a3d40b7b2d30e44c0bb8c5b"></iframe>
         </div>
     </div>
 
