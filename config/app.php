@@ -168,8 +168,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        BeyondCode\LaravelWebSockets\WebSocketsServiceProvider::class,
-        BeyondCode\LaravelWebSockets\Facades\WebSocketsRouter::class,
     ])->toArray(),
 
     /*

@@ -2,39 +2,11 @@
 
 namespace App\Providers;
 
-use BeyondCode\LaravelWebSockets\Facades\WebSocketsRouter;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
-// use BeyondCode\LaravelWebSockets\WebSocketsServiceProvider;
-
-WebSocketsRouter::route('mqtt', function ($connection) {
-    // Subscribe to the MQTT broker
-    $mqttClient = new MqttClient('mqtt://IPADDRESS'); // Replace with your MQTT broker URL
-    $mqttClient->connect();
-    $mqttClient->subscribe('sensor/readings');
-
-    // Listen for incoming MQTT messages
-    $mqttClient->on('message', function (MqttMessage $message) {
-        // Parse the MQTT message as JSON
-        $jsonData = json_decode($message->getPayload());
-
-        // Broadcast the JSON data to all connected WebSocket clients
-        broadcast(new SensorReadingEvent($jsonData));
-    });
-
-    // Handle any errors that occur
-    $mqttClient->on('error', function (MqttException $e) {
-        Log::error('MQTT error: ' . $e->getMessage());
-    });
-
-    // Close the MQTT connection when the WebSocket connection closes
-    $connection->onClose(function () {
-        $mqttClient->disconnect();
-    });
-});
 
 class RouteServiceProvider extends ServiceProvider
 {
